@@ -1,0 +1,15 @@
+POST   http://localhost:3000/GiaoXe
+Content-Type: application/json
+
+{
+        "end": 1710204262179,
+        "start":1707081981786
+}
+
+###
+
+GET http://localhost:3000/TrongXuong
+
+###
+
+PUT  http://localhost:3000/item/5cf80b731ad6501f0ca9d49e/quantity/3
