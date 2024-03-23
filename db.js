@@ -41,7 +41,6 @@ const getItemsGX = async (item) => {
     try {
       const collection = await db.collection('Giao_Xe');
       const items = await collection.find({createdAt:{$gte:Number(item.start),$lt: Number(item.end)}}).toArray()
-      console.log("Retrieved items successfully:",items);
       return items
   } catch (error) {
       console.error("Error retrieving items:", error);
