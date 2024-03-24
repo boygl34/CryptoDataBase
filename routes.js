@@ -26,6 +26,7 @@ router.post('/GiaoXe', (req, res) => {
   getItemsGX(item)
     .then((items) => {
       res.json(items)
+    console.log("Done",req.body)
       res.status(200).end()
     })
     .catch((err) => {
