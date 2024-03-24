@@ -3,7 +3,7 @@ const express = require('express')
 const { getItems, updateItems,getItemsGX } = require('./db')
 
 const router = express.Router()
-
+router.use(cors( { origin: '*' }));
 router.patch('/TrongXuong', (req, res) => {
   const item = req.body
   if(item._id){
