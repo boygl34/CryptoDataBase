@@ -1,5 +1,5 @@
 const express = require('express')
-
+const cors = require('cors'); 
 const { getItems, updateItems,getItemsGX } = require('./db')
 
 const router = express.Router()
