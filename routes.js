@@ -1,32 +1,17 @@
 const express = require('express')
 const cors = require('cors'); 
-const { getItems, updateItems,getItemsGX } = require('./db')
+const {  getBidAsk } = require('./db')
 
 const router = express.Router()
 router.use(cors( { origin: '*' }));
-router.patch('/TrongXuong', (req, res) => {
-  const item = req.body
-  if(item._id){
-  updateItems(item._id,item.data)
-    .then(() => {
-      res.status(200).end()
-    })
-    .catch((err) => {
-      console.log(err)
-      res.status(500).end()
-    })
-  } else {
-    res.status(500).end()
-    }
-})
 
-router.post('/GiaoXe', (req, res) => {
+
+router.post('/BidAsK', (req, res) => {
   const item = req.body
   console.log(req.body)
-  getItemsGX(item)
+  getBidAsk(item)
     .then((items) => {
       res.json(items)
-    console.log("Done",req.body)
       res.status(200).end()
     })
     .catch((err) => {
@@ -35,17 +20,7 @@ router.post('/GiaoXe', (req, res) => {
     })
 })
 
-router.get('/TrongXuong', (req, res) => {
-  getItems()
-    .then((items) => {
-      res.json(items)
-      res.status(200).end()
-    })
-    .catch((err) => {
-      console.log(err)
-      res.status(500).end()
-    })
-})
+
 
 
 
